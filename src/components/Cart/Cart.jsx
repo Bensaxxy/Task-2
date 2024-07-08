@@ -3,6 +3,7 @@ import tv from "/images/Frame (2).png";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiHeart } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import MobileCart from "./MobileCart";
 
 const homeItems = [
   {
@@ -22,9 +23,12 @@ const Cart = () => {
       <div className=" container">
         <h1 className=" text-black font-semibold text-3xl my-10">Cart</h1>
         <div className=" border border-primary/10 rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between">
-          <div className=" lg:col-span-2 py-8 px-4 items-center flex-col lg:flex-row flex gap-6">
+          <div className=" block lg:hidden">
+            <MobileCart />
+          </div>
+          <div className="hidden lg:flex lg:col-span-2 justify-between py-8 px-4 items-center flex-col lg:flex-row gap-6">
             <div className=" bg-primary/30  p-4 rounded-md">
-              <img src={tv} className=" w-[150px]" />
+              <img src={tv} className=" w-[160px]" />
             </div>
             <div className=" flex flex-col">
               <h1 className=" font-bold text-[12px] md:text-[18px] lg:text-[20px]">
