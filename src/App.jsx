@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart"; // Import the Cart component
 import Footer from "./components/Footer/Footer";
 import MobileFooter from "./components/Footer/MobileFooter";
+import { CartProvider } from "./components/Home/CartContext"; // Import the CartProvider
 
 const App = () => {
   const HomeWithHeaderThree = () => (
@@ -15,18 +16,21 @@ const App = () => {
       <Home />
     </>
   );
+
   return (
-    <div className=" font-primary">
-      <Router>
-        <HeaderOne />
-        <HeaderTwo />
-        <Routes>
-          <Route path="/" element={<HomeWithHeaderThree />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-        <Footer />
-        <MobileFooter />
-      </Router>
+    <div className="font-primary">
+      <CartProvider>
+        <Router>
+          <HeaderOne />
+          <HeaderTwo />
+          <Routes>
+            <Route path="/" element={<HomeWithHeaderThree />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+          <Footer />
+          <MobileFooter />
+        </Router>
+      </CartProvider>
     </div>
   );
 };
